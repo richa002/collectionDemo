@@ -1,18 +1,16 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 
 public class ListDemo {
     public static void main(String[] args) {
 
-int [] arr = new int[10];
+       int [] arr = new int[10];
 
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new LinkedList<>();
 
-
-        list.add(1);
+        list.add(2,55);
+         list.add(1);
 
 
         list.add(2);
@@ -21,24 +19,32 @@ int [] arr = new int[10];
         list.add(5);
 
 
-        Predicate p = o->(Integer)o>9;
+        list.remove(3);
 
-        list.stream().filter(p).forEach(e-> System.out.println(e));
+        System.out.println(list.get(0));
+
+
+        List<Integer> integers = Collections.synchronizedList(list);
+
+        Vector v = new Vector();
+       // Predicate p = o->(Integer)o>9;
+
+        //list.stream().filter(p).forEach(e-> System.out.println(e));
 
 
   //      list.add(2,4);
        // list.addAll(1,2,3);
 
 
-
-        for(Integer i:list){
-            System.out.println( list.get(0));
+//enhance for loop
+        for(Integer num:list){
+            System.out.println(num);
         }
 
 
-        System.out.println( list.indexOf(4));
-
-        list.subList(2,4);
+//        System.out.println( list.indexOf(4));
+//
+//        list.subList(2,4);
         Iterator<Integer> it = list.iterator();
 
         while(it.hasNext()){
